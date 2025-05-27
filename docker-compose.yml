@@ -10,3 +10,19 @@ services:
       POSTGRES_DB: spring_docker
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: postgres
+
+  api:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "8080:8080"
+    container_name: spring_docker_api
+    depends_on:
+      - postgres
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:postgresql://postgres:5432/spring_docker
+      SPRING_DATASOURCE_USERNAME: postgres
+      SPRING_DATASOURCE_PASSWORD: postgres
+    networks:
+      - spring_network

@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import br.com.lucaslnasc.spring_docker.dto.ApiResponseDTO;
 import br.com.lucaslnasc.spring_docker.dto.ProductRequestDTO;
 import br.com.lucaslnasc.spring_docker.dto.ProductResponseDTO;
 import br.com.lucaslnasc.spring_docker.useCases.CreateProductUseCase;
@@ -40,38 +41,40 @@ public class ProductController {
 
     @PostMapping
     @Operation(summary = "Criar um novo produto")
-    public ResponseEntity<ProductResponseDTO> createProduct(@RequestBody @Valid ProductRequestDTO request) {
+    public ResponseEntity<ApiResponseDTO<ProductResponseDTO>> createProduct(
+            @RequestBody @Valid ProductRequestDTO request) {
         ProductResponseDTO response = createProductUseCase.execute(request);
-        return ResponseEntity.status(HttpStatus.CREATED).body(response);
+        return ResponseEntity.status(HttpStatus.CREATED)
+                .body(new ApiResponseDTO<>("Produto criado com sucesso!", response));
     }
 
     @GetMapping("/{id}")
     @Operation(summary = "Buscar um produto por ID")
-    public ResponseEntity<ProductResponseDTO> getProduct(@PathVariable UUID id) {
+    public ResponseEntity<ApiResponseDTO<ProductResponseDTO>> getProduct(@PathVariable UUID id) {
         ProductResponseDTO response = getProductUseCase.execute(id);
-        return ResponseEntity.ok(response);
+        return ResponseEntity.ok(new ApiResponseDTO<>("Produto encontrado com sucesso!", response));
     }
 
     @GetMapping
     @Operation(summary = "Listar todos os produtos")
-    public ResponseEntity<List<ProductResponseDTO>> listProducts() {
+    public ResponseEntity<ApiResponseDTO<List<ProductResponseDTO>>> listProducts() {
         List<ProductResponseDTO> response = listProductsUseCase.execute();
-        return ResponseEntity.ok(response);
+        return ResponseEntity.ok(new ApiResponseDTO<>("Produtos listados com sucesso!", response));
     }
 
     @PutMapping("/{id}")
     @Operation(summary = "Atualizar um produto existente")
-    public ResponseEntity<ProductResponseDTO> updateProduct(
+    public ResponseEntity<ApiResponseDTO<ProductResponseDTO>> updateProduct(
             @PathVariable UUID id,
             @RequestBody @Valid ProductRequestDTO request) {
         ProductResponseDTO response = updateProductUseCase.execute(id, request);
-        return ResponseEntity.ok(response);
+        return ResponseEntity.ok(new ApiResponseDTO<>("Produto atualizado com sucesso!", response));
     }
 
     @DeleteMapping("/{id}")
     @Operation(summary = "Excluir um produto")
-    public ResponseEntity<Void> deleteProduct(@PathVariable UUID id) {
+    public ResponseEntity<ApiResponseDTO<Void>> deleteProduct(@PathVariable UUID id) {
         deleteProductUseCase.execute(id);
-        return ResponseEntity.noContent().build();
+        return ResponseEntity.ok(new ApiResponseDTO<>("Produto excluído com sucesso!", null));
     }
 }
