@@ -139,7 +139,7 @@ O ambiente Docker inclui:
 
 1. Build do projeto:
 ```bash
-./mvnw clean package -DskipTests
+./mvnw clean package
 ```
 
 2. Build e execução dos containers:
