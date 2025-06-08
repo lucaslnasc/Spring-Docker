@@ -5,36 +5,36 @@ version: "3.8"
 services:
   # Serviço do PostgreSQL
   postgres:
-    image: postgres                      # Imagem oficial do PostgreSQL
+    image: postgres # Imagem oficial do PostgreSQL
     ports:
-      - "5432:5432"                      # Mapeamento de porta (host:container)
-    container_name: spring_docker_db     # Nome do container
-    environment:                         # Variáveis de ambiente para configuração
-      POSTGRES_DB: spring_docker         # Nome do banco de dados
-      POSTGRES_USER: postgres            # Usuário do banco
-      POSTGRES_PASSWORD: postgres        # Senha do banco
+      - "5432:5432" # Mapeamento de porta (host:container)
+    container_name: spring_docker_db # Nome do container
+    environment: # Variáveis de ambiente para configuração
+      POSTGRES_DB: spring_docker # Nome do banco de dados
+      POSTGRES_USER: postgres # Usuário do banco
+      POSTGRES_PASSWORD: postgres # Senha do banco
     networks:
-      - spring_network                   # Conexão com a rede spring_network
+      - spring_network # Conexão com a rede spring_network
 
   # Serviço da API Spring Boot
   api:
-    build:                              # Configuração de build
-      context: .                        # Contexto do build (diretório atual)
-      dockerfile: Dockerfile            # Arquivo Dockerfile a ser usado
+    build: # Configuração de build
+      context: . # Contexto do build (diretório atual)
+      dockerfile: Dockerfile # Arquivo Dockerfile a ser usado
     ports:
-      - "8080:8080"                    # Mapeamento de porta (host:container)
-    container_name: spring_docker_api   # Nome do container
+      - "8080:8080" # Mapeamento de porta (host:container)
+    container_name: spring_docker_api # Nome do container
     depends_on:
-      - postgres                        # Dependência do serviço postgres
-    environment:                        # Variáveis de ambiente do Spring
+      - postgres # Dependência do serviço postgres
+    environment: # Variáveis de ambiente do Spring
       # URL de conexão usando o nome do serviço 'postgres' como hostname
       SPRING_DATASOURCE_URL: jdbc:postgresql://postgres:5432/spring_docker
       SPRING_DATASOURCE_USERNAME: postgres
       SPRING_DATASOURCE_PASSWORD: postgres
     networks:
-      - spring_network                  # Conexão com a rede spring_network
+      - spring_network # Conexão com a rede spring_network
 
 # Configuração das redes
 networks:
-  spring_network:                       # Rede para comunicação entre containers
-    driver: bridge                      # Tipo de rede (bridge é o padrão)
+  spring_network: # Rede para comunicação entre containers
+    driver: bridge # Tipo de rede (bridge é o padrão)

@@ -1,0 +1,13 @@
+C:\Users\lucas\OneDrive\Documentos\spring-docker\src\main\java\br\com\lucaslnasc\spring_docker\controller\ProductController.java
+C:\Users\lucas\OneDrive\Documentos\spring-docker\src\main\java\br\com\lucaslnasc\spring_docker\dto\ApiResponseDTO.java
+C:\Users\lucas\OneDrive\Documentos\spring-docker\src\main\java\br\com\lucaslnasc\spring_docker\dto\ProductRequestDTO.java
+C:\Users\lucas\OneDrive\Documentos\spring-docker\src\main\java\br\com\lucaslnasc\spring_docker\dto\ProductResponseDTO.java
+C:\Users\lucas\OneDrive\Documentos\spring-docker\src\main\java\br\com\lucaslnasc\spring_docker\mapper\ProductMapper.java
+C:\Users\lucas\OneDrive\Documentos\spring-docker\src\main\java\br\com\lucaslnasc\spring_docker\model\Product.java
+C:\Users\lucas\OneDrive\Documentos\spring-docker\src\main\java\br\com\lucaslnasc\spring_docker\repository\ProductRepository.java
+C:\Users\lucas\OneDrive\Documentos\spring-docker\src\main\java\br\com\lucaslnasc\spring_docker\SpringDockerApplication.java
+C:\Users\lucas\OneDrive\Documentos\spring-docker\src\main\java\br\com\lucaslnasc\spring_docker\useCases\CreateProductUseCase.java
+C:\Users\lucas\OneDrive\Documentos\spring-docker\src\main\java\br\com\lucaslnasc\spring_docker\useCases\DeleteProductUseCase.java
+C:\Users\lucas\OneDrive\Documentos\spring-docker\src\main\java\br\com\lucaslnasc\spring_docker\useCases\GetProductUseCase.java
+C:\Users\lucas\OneDrive\Documentos\spring-docker\src\main\java\br\com\lucaslnasc\spring_docker\useCases\ListProductsUseCase.java
+C:\Users\lucas\OneDrive\Documentos\spring-docker\src\main\java\br\com\lucaslnasc\spring_docker\useCases\UpdateProductUseCase.java

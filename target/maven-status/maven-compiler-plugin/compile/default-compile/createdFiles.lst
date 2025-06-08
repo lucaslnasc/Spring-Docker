@@ -1,0 +1,16 @@
+br\com\lucaslnasc\spring_docker\SpringDockerApplication.class
+br\com\lucaslnasc\spring_docker\controller\ProductController.class
+br\com\lucaslnasc\spring_docker\dto\ApiResponseDTO$ApiResponseDTOBuilder.class
+br\com\lucaslnasc\spring_docker\useCases\GetProductUseCase.class
+br\com\lucaslnasc\spring_docker\useCases\CreateProductUseCase.class
+br\com\lucaslnasc\spring_docker\mapper\ProductMapper.class
+br\com\lucaslnasc\spring_docker\mapper\ProductMapperImpl.class
+br\com\lucaslnasc\spring_docker\dto\ApiResponseDTO.class
+br\com\lucaslnasc\spring_docker\model\Product.class
+br\com\lucaslnasc\spring_docker\useCases\DeleteProductUseCase.class
+br\com\lucaslnasc\spring_docker\useCases\ListProductsUseCase.class
+br\com\lucaslnasc\spring_docker\dto\ProductRequestDTO.class
+br\com\lucaslnasc\spring_docker\dto\ProductResponseDTO.class
+br\com\lucaslnasc\spring_docker\useCases\UpdateProductUseCase.class
+br\com\lucaslnasc\spring_docker\repository\ProductRepository.class
+br\com\lucaslnasc\spring_docker\model\Product$ProductBuilder.class
